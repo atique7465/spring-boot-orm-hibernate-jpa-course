@@ -1,0 +1,59 @@
+############Git Global Config First, Skip if done already############
+$ git config --global user.name   "atiQue"                                                                                                                                                
+$ git config --global user.email atiqurrahman****@****.com    
+$ git config --global user.password "*****" 
+
+######################SSH Configure##############################
+##just open the cmd or git bash in home directory and run the commands like:
+
+atiqur@Atique MINGW64 ~
+$ ssh-keygen -t rsa -b 4096 -C "atiqurrahman****@****.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/atiqur/.ssh/id_rsa):             [no need to input anything just go with the default name by pressing enter]
+Created directory '/c/Users/atiqur/.ssh'.                                      [.ssh directory will be created autometically]
+Enter passphrase (empty for no passphrase):                                    [set a password or left empty by pressing enter to config password less ssh]
+Enter same passphrase again:                                                   [do the same as before]
+Your identification has been saved in /c/Users/atiqur/.ssh/id_rsa
+Your public key has been saved in /c/Users/atiqur/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:VO9KMTZwJnljiVIsx57NQMRM9aU1hPpcB4ns4vk48B8 atiqurrahman****@****.com
+The key's randomart image is:
++---[RSA 4096]----+
+|       XB+=o +=. |
+|      o X*=o++o. |
+|       =.B=++  . |
+|       .o.==. . .|
+|        S..=.. . |
+|        ..o.o    |
+|         o.oE    |
+|          + ..   |
+|           o.    |
++----[SHA256]-----+
+
+atiqur@Atique MINGW64 ~
+$ eval "$(ssh-agent -s)"                                                      [verify the ssh agent]
+Agent pid 2333
+
+atiqur@Atique MINGW64 ~
+$ ssh-add ~/.ssh/id_rsa                                                       [add id_rsa to ssh agent]
+Enter passphrase for /c/Users/atiqur/.ssh/id_rsa:
+Identity added: /c/Users/atiqur/.ssh/id_rsa (atiqurrahman****@****.com)
+
+atiqur@Atique MINGW64 ~
+$ clip < ~/.ssh/id_rsa.pub                                                    [copy id_rsa.pub or you can open and copy the content manually]
+
+##go and add ssh key (id_rsa.pub) in github or any git server by pasting the key
+
+
+##[Optional] Now authenticate git servers (here we authenticated github)
+atiqur@Atique MINGW64 ~
+$ ssh -T git@github.com              
+The authenticity of host 'github.com (20.205.243.166)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes      [Enter Yes]
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Hi atique! You've successfully authenticated, but GitHub does not provide shell access.
+
+
+Done....
