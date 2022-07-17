@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "088950be-7c1d-4c3b-85fb-244769e9e7a9",
+		"name": "Book Info Manager task 03",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10431930"
+	},
+	"item": [
+		{
+			"name": "Save Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"bookName\": \"Himu\",\r\n    \"bookType\": \"NOVEL\",\r\n    \"author\": \"Humaun Ahmed\",\r\n    \"price\": 200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8084/book-info-manager-1.0/api/v1/book",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"book-info-manager-1.0",
+						"api",
+						"v1",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : 1,\r\n    \"bookName\" : \"Himu\",\r\n    \"bookType\" : \"NOVEL\",\r\n    \"author\" : \"Humaun Ahmed\",\r\n    \"price\" : 300\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/book-info-manager-1.0/api/v1/book/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"book-info-manager-1.0",
+						"api",
+						"v1",
+						"book",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8084/book-info-manager-1.0/api/v1/book/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"book-info-manager-1.0",
+						"api",
+						"v1",
+						"book",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book By ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8084/book-info-manager-1.0/api/v1/book/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"book-info-manager-1.0",
+						"api",
+						"v1",
+						"book",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8084/book-info-manager-1.0/api/v1/book",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"book-info-manager-1.0",
+						"api",
+						"v1",
+						"book"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
